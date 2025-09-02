@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Portfolio Setup Guide</title>
+    <title>Data Science Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -14,369 +15,465 @@
         }
         
         body {
-            background-color: #f5f8fa;
-            color: #24292e;
+            background-color: #f8f9fa;
+            color: #333;
             line-height: 1.6;
-            padding-bottom: 50px;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            margin-bottom: 30px;
+        section {
+            padding: 60px 0;
         }
         
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            margin: 25px 0 15px;
+        h1, h2, h3 {
+            margin-bottom: 20px;
             color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
-        }
-        
-        h3 {
-            font-size: 1.4rem;
-            margin: 20px 0 12px;
-            color: #3498db;
         }
         
         p {
-            margin-bottom: 16px;
-            font-size: 1.1rem;
+            margin-bottom: 15px;
         }
         
-        .steps {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-bottom: 30px;
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
         }
         
-        .step {
-            display: flex;
-            margin-bottom: 25px;
-            align-items: flex-start;
-        }
-        
-        .step-number {
-            background-color: #3498db;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .step-content {
-            flex: 1;
-        }
-        
-        .screenshot {
-            background-color: #f8f9fa;
-            border: 1px solid #e1e4e8;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 15px 0;
-            text-align: center;
-        }
-        
-        .screenshot img {
-            max-width: 100%;
-            border: 1px solid #d1d5da;
-            border-radius: 3px;
-        }
-        
-        .caption {
-            font-style: italic;
-            margin-top: 10px;
-            color: #6a737d;
-        }
-        
-        .code-block {
-            background-color: #2d2d2d;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .note {
-            background-color: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 15px;
-            margin: 20px 0;
-        }
-        
-        .warning {
-            background-color: #ffebee;
-            border-left: 4px solid #f44336;
-            padding: 15px;
-            margin: 20px 0;
-        }
-        
-        .success {
-            background-color: #e8f5e9;
-            border-left: 4px solid #4caf50;
-            padding: 15px;
-            margin: 20px 0;
+        a:hover {
+            color: #2980b9;
         }
         
         .btn {
             display: inline-block;
+            padding: 12px 25px;
             background-color: #3498db;
             color: white;
-            padding: 12px 25px;
             border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 10px 5px;
+            font-weight: 600;
             transition: background-color 0.3s;
         }
         
         .btn:hover {
             background-color: #2980b9;
+            color: white;
         }
         
-        .btn-secondary {
-            background-color: #2c3e50;
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         
-        .btn-secondary:hover {
-            background-color: #1a252f;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
         }
         
-        .faq-item {
-            margin-bottom: 20px;
-        }
-        
-        .faq-question {
-            font-weight: bold;
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
             color: #2c3e50;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background-color: #f8f9fa;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        .project-tag {
+            background-color: #e7f4fe;
+            color: #3498db;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 8px;
             margin-bottom: 8px;
         }
         
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #6a737d;
+        /* Skills Section */
+        .skills {
+            background-color: white;
         }
         
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list i {
+            color: #3498db;
+            margin-right: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            color: #3498db;
+            border-radius: 50%;
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .step {
+            .about-content {
                 flex-direction: column;
             }
             
-            .step-number {
-                margin-bottom: 10px;
-                margin-right: 0;
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
-            <h1>GitHub Portfolio Setup Guide</h1>
-            <p>Learn exactly where to add your HTML code and publish your portfolio</p>
+            <nav>
+                <div class="logo">DataSciencePortfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
-    <div class="container">
-        <div class="steps">
-            <h2>Where to Add Your HTML Code on GitHub</h2>
-            
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Create a New File</h3>
-                    <p>In your GitHub repository, click the <strong>"Add file"</strong> button and select <strong>"Create new file"</strong>.</p>
-                    <div class="screenshot">
-                        <div style="background:#f6f8fa; padding:30px; border-radius:5px;">
-                            <div style="background:#24292e; color:white; padding:10px; border-top-left-radius:5px; border-top-right-radius:5px;">
-                                username.github.io
-                            </div>
-                            <div style="display:flex; justify-content:space-between; background:#e1e4e8; padding:10px;">
-                                <div>
-                                    <button style="background:#2ea44f; color:white; border:none; padding:5px 10px; border-radius:3px; font-weight:bold;">Add file</button>
-                                </div>
-                                <div>
-                                    <button style="background:transparent; border:1px solid #d1d5da; padding:5px 10px; border-radius:3px;">Code</button>
-                                </div>
-                            </div>
-                            <div style="padding:20px; text-align:left;">
-                                <p>No files yet. Click "Add file" to add your HTML file.</p>
-                            </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Data Science Portfolio</h1>
+            <p>Showcasing my data-driven projects and analytical skills</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm a passionate data scientist with expertise in machine learning, statistical analysis, and data visualization. I enjoy turning complex data into actionable insights that drive business decisions.</p>
+                    <p>With a background in computer science and statistics, I bring a unique blend of technical skills and analytical thinking to solve real-world problems.</p>
+                    <p>When I'm not working with data, you can find me reading about the latest advancements in AI, contributing to open-source projects, or hiking in the mountains.</p>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="Data Scientist">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Predictive Analytics">
+                    </div>
+                    <div class="project-content">
+                        <h3>Predictive Sales Analytics</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Time Series</span>
+                            <span class="project-tag">Python</span>
                         </div>
-                        <div class="caption">Your empty GitHub repository</div>
+                        <p>Developed a predictive model to forecast sales for an e-commerce company, resulting in a 15% improvement in inventory management.</p>
+                        <a href="#">View Project →</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Name Your File</h3>
-                    <p>Name your file <code>index.html</code> - this is the default file that GitHub Pages will look for.</p>
-                    <div class="screenshot">
-                        <div style="background:#f6f8fa; padding:30px; border-radius:5px; text-align:left;">
-                            <div style="background:#24292e; color:white; padding:10px; border-top-left-radius:5px; border-top-right-radius:5px;">
-                                username.github.io / <strong>index.html</strong>
-                            </div>
-                            <div style="background:#e1e4e8; padding:10px; display:flex; align-items:center;">
-                                <div style="margin-right:10px;">Name your file...</div>
-                                <div style="background:white; padding:2px 5px; border:1px solid #d1d5da; border-radius:3px; font-family:monospace;">index.html</div>
-                            </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Customer Segmentation">
+                    </div>
+                    <div class="project-content">
+                        <h3>Customer Segmentation</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Clustering</span>
+                            <span class="project-tag">K-Means</span>
+                            <span class="project-tag">R</span>
                         </div>
-                        <div class="caption">Naming your file index.html</div>
+                        <p>Implemented a customer segmentation model using clustering algorithms to identify distinct customer groups for targeted marketing.</p>
+                        <a href="#">View Project →</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Paste Your HTML Code</h3>
-                    <p>Paste your complete HTML code into the editor. Make sure to include the entire document from <code>&lt;!DOCTYPE html&gt;</code> to <code>&lt;/html&gt;</code>.</p>
-                    <div class="code-block">
-// Paste your entire HTML code here<br>
-&lt;!DOCTYPE html&gt;<br>
-&lt;html lang="en"&gt;<br>
-&lt;head&gt;<br>
-&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
-&nbsp;&nbsp;&nbsp;&lt;title&gt;My Portfolio&lt;/title&gt;<br>
-&lt;/head&gt;<br>
-&lt;body&gt;<br>
-&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Portfolio&lt;/h1&gt;<br>
-&lt;/body&gt;<br>
-&lt;/html&gt;
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Sentiment Analysis">
                     </div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h3>Commit Your Changes</h3>
-                    <p>Scroll to the bottom of the page, add a commit message, and click <strong>"Commit new file"</strong>.</p>
-                    <div class="screenshot">
-                        <div style="background:#f6f8fa; padding:30px; border-radius:5px; text-align:left;">
-                            <div style="background:#e1e4e8; padding:15px; border-bottom:1px solid #d1d5da;">
-                                Commit new file
-                            </div>
-                            <div style="padding:15px;">
-                                <div style="margin-bottom:10px;">
-                                    <input type="text" placeholder="Add a commit message" style="width:100%; padding:8px; border:1px solid #d1d5da; border-radius:3px;">
-                                </div>
-                                <div style="margin-bottom:10px;">
-                                    <input type="radio" checked> Commit directly to the main branch
-                                </div>
-                                <button style="background:#2ea44f; color:white; border:none; padding:8px 16px; border-radius:3px; font-weight:bold;">Commit new file</button>
-                            </div>
+                    <div class="project-content">
+                        <h3>Social Media Sentiment Analysis</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">TensorFlow</span>
+                            <span class="project-tag">Python</span>
                         </div>
-                        <div class="caption">Committing your new HTML file</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">5</div>
-                <div class="step-content">
-                    <h3>Enable GitHub Pages</h3>
-                    <p>Go to your repository <strong>Settings</strong>, then to the <strong>Pages</strong> section. Select the main branch and click Save.</p>
-                    <div class="screenshot">
-                        <div style="background:#f6f8fa; padding:30px; border-radius:5px; text-align:left;">
-                            <div style="display:flex; border-bottom:1px solid #d1d5da;">
-                                <div style="padding:10px; border-bottom:2px solid #f9826c;">Settings</div>
-                                <div style="padding:10px;">Pages</div>
-                            </div>
-                            <div style="padding:15px;">
-                                <h4 style="margin:10px 0;">GitHub Pages</h4>
-                                <div style="background:white; border:1px solid #e1e4e8; border-radius:3px; padding:15px; margin:10px 0;">
-                                    <p>Your site is ready to be published at <strong>https://username.github.io</strong></p>
-                                    <div style="display:flex; align-items:center; margin:15px 0;">
-                                        <select style="padding:5px; margin-right:10px;">
-                                            <option>main</option>
-                                            <option>gh-pages</option>
-                                        </select>
-                                        <button style="background:#2ea44f; color:white; border:none; padding:5px 10px; border-radius:3px;">Save</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="caption">Enabling GitHub Pages in repository settings</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">6</div>
-                <div class="step-content">
-                    <h3>View Your Live Portfolio</h3>
-                    <p>After a few minutes, your portfolio will be live at <code>https://username.github.io</code> (replace "username" with your GitHub username).</p>
-                    <div class="success">
-                        <p><strong>Success!</strong> Your portfolio is now live. It may take a few minutes for the site to be available after your first commit.</p>
+                        <p>Built a sentiment analysis tool to classify customer reviews and social media posts, achieving 89% accuracy on test data.</p>
+                        <a href="#">View Project →</a>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="note">
-            <h3><i class="fas fa-lightbulb"></i> Pro Tip</h3>
-            <p>If you already have an HTML file, you can also upload it directly by clicking "Add file" → "Upload files" and dragging your HTML file to the repository.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-code"></i> Python</li>
+                        <li><i class="fas fa-code"></i> R</li>
+                        <li><i class="fas fa-code"></i> SQL</li>
+                        <li><i class="fas fa-code"></i> JavaScript</li>
+                    </ul>
+                </div>
+                
+                <!-- Data Science -->
+                <div class="skill-category">
+                    <h3>Data Science</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-chart-line"></i> Machine Learning</li>
+                        <li><i class="fas fa-chart-bar"></i> Statistical Analysis</li>
+                        <li><i class="fas fa-database"></i> Data Visualization</li>
+                        <li><i class="fas fa-brain"></i> Deep Learning</li>
+                    </ul>
+                </div>
+                
+                <!-- Tools -->
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-wrench"></i> TensorFlow</li>
+                        <li><i class="fas fa-wrench"></i> PyTorch</li>
+                        <li><i class="fas fa-wrench"></i> Tableau</li>
+                        <li><i class="fas fa-wrench"></i> Git</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
-        <h2>Frequently Asked Questions</h2>
-        
-        <div class="faq-item">
-            <div class="faq-question">Q: Why does my file need to be named index.html?</div>
-            <p>A: <code>index.html</code> is the default file that web servers look for when a URL doesn't specify a filename. This makes your portfolio accessible at a clean URL without needing to include the filename.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Feel free to reach out for collaborations or just to say hello!</p>
+            <div class="contact-links">
+                <a href="#" class="contact-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="contact-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="contact-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Q: My site isn't showing up. What should I do?</div>
-            <p>A: First, check that your repository is set to public. Then verify that GitHub Pages is enabled for the main branch. It can take up to 10 minutes for your site to be available after the first deployment.</p>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Q: Can I use a custom domain?</div>
-            <p>A: Yes! In your repository Settings → Pages, you can add a custom domain. You'll also need to configure your DNS settings with your domain registrar.</p>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Q: How do I update my portfolio later?</div>
-            <p>A: You can edit your <code>index.html</code> file directly on GitHub by clicking on the file and then the pencil icon, or upload a new version of your HTML file.</p>
-        </div>
-        
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="#" class="btn">View Example Portfolio</a>
-            <a href="#" class="btn btn-secondary">Go to GitHub</a>
-        </div>
-    </div>
-    
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>Need more help? Check out the <a href="https://docs.github.com/en/pages">GitHub Pages documentation</a></p>
+            <p>&copy; 2023 Data Science Portfolio. All rights reserved.</p>
         </div>
     </footer>
 </body>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Portfolio Setup Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f8fa;
+            color: #24292e;
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 12px;
+            color: #3498db;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+        
+        .steps {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .screenshot {
+            background-color: #f8f9fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .screenshot img {
+            max-width: 100%;
+            border: 1px solid #d1d5da;
+            border-radius: 3px;
+        }
+        
+        .caption {
+            font-style: italic;
+            margin-top: 10px;
+            color: #6a737d;
+        }
+        
+        .code-block {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .note {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .warning {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .success {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-secondary {
+            background-color: #2c3e50;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #1a252f;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #6a737d;
+        }
+        
+        @media (max-width: 768px) {
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>GitHub Portfolio Setup Guide</h1>
+            <p>Learn exactly where to add your HTML code and publish your portfolio</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="steps">
+            <h2>Where to Add Your HTML Code on GitHub</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Create a New File</h3>
+                    <p>In your GitHub repository, click the <strong>"Add file"</strong> button and select <strong>"Create new file"</strong>.</p>
+                    <div class="screenshot">
+                        <div style="background:#f6f8fa; padding:30px; border-radius:5px;">
+                            <div style="background:#24292e; color:white; padding:10px; border-top-left-radius:5px; border-top-right-radius:5px;">
+                                username.github.io
+                            </div>
+                            <div style="display:flex; justify-content:space-between; background:#e1e4e8; padding:10px;">
+                                <div>
+                                    <button style="background:#2ea44f; color:white; border:none; padding:5px 10px; border-radius:3px; font-weight:bold;">Add file</button>
+                                </div>
+                                <div>
+                                    <button style="background:transparent; border:1px solid #d1d5da; padding:5px 10px; border-radius:3px;">Code</button>
+                                </div>
+                            </div>
+                            <div style="padding:20px; text-align:left;">
+                                <p>No files yet. Click "Add file" to add your HTML file.</p>
+                            </div>
+                        </div>
+                        <div class="caption">Your empty GitHub repository</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Name Your File</h3>
+                    <p>Name your file <code>index.html</code> - this is the default file that GitHub Pages will look for.</p>
+                    <div class="screenshot">
+                        <div style="background:#f6f8fa; padding:30px; border-radius:5px; text-align:left;">
+                            <div style="background:#24292e; color:white; padding:10px; border-top-left-radius:5px; border-top-right-radius:5px;">
+                                username.github.io / <strong>index.html</strong>
+                            </div>
+                            <div style="background:#e1e4e8; padding:10px; display:flex; align-items:center;">
+                                <div style="margin-right:10px;">Name your file...</div>
+                                <div style="background:white; padding:2px 5px; border:1px solid #d1d5da; border-radius:3px; font-family:monospace;">index.html</div>
+                            </div>
+                        </div>
+                        <div class="caption">Naming your file index.html</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Paste Your HTML Code</h3>
+                    <p>Paste your complete HTML code into the editor. Make sure to include the entire document from <code>&lt;!DOCTYPE html&gt;</code> to <code>&lt;/html&gt;</code>.</p>
+                    <div class="code-block">
+// Paste your entire HTML code here<br>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;title&gt;My Portfolio&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Portfolio&lt;/h1&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Commit Your Changes</h3>
+                    <p>Scroll to the bottom of the page, add a commit message, and click <strong>"Commit new file"</strong>.</p>
+                    <div class="screenshot">
+                        <div style="background:#f6f8fa; padding:30px; border-radius:5px; text-align:left;">
+                            <div style="background:#e1e4e8; padding:15px; border-bottom:1px solid #d1d5da;">
+                                Commit new file
+                            </div>
+                            <div style="padding:15px;">
+                                <div style="margin-bottom:10px;">
+                                    <input type="text" placeholder="Add a commit message" style="width:100%; padding:8px; border:1px solid #d1d5da; border-radius:3px;">
+                                </div>
+                                <div style="margin-bottom:10px;">
+                                    <input type="radio" checked> Commit directly to the main branch
+                                </div>
+                                <button style="background:#2ea44f; color:white; border:none; padding:8px 16px; border-radius:3px; font-weight:bold;">Commit new file</button>
+                            </div>
+                        </div>
+                        <div class="caption">Committing your new HTML file</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Enable GitHub Pages</h3>
+                    <p>Go to your repository <strong>Settings</strong>, then to the <strong>Pages</strong> section. Select the main branch and click Save.</p>
+                    <div class="screenshot">
+                        <div style="background:#f6f8fa; padding:30px; border-radius:5px; text-align:left;">
+                            <div style="display:flex; border-bottom:1px solid #d1d5da;">
+                                <div style="padding:10px; border-bottom:2px solid #f9826c;">Settings</div>
+                                <div style="padding:10px;">Pages</div>
+                            </div>
+                            <div style="padding:15px;">
+                                <h4 style="margin:10px 0;">GitHub Pages</h4>
+                                <div style="background:white; border:1px solid #e1e4e8; border-radius:3px; padding:15px; margin:10px 0;">
+                                    <p>Your site is ready to be published at <strong>https://username.github.io</strong></p>
+                                    <div style="display:flex; align-items:center; margin:15px 0;">
+                                        <select style="padding:5px; margin-right:10px;">
+                                            <option>main</option>
+                                            <option>gh-pages</option>
+                                        </select>
+                                        <button style="background:#2ea44f; color:white; border:none; padding:5px 10px; border-radius:3px;">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="caption">Enabling GitHub Pages in repository settings</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3>View Your Live Portfolio</h3>
+                    <p>After a few minutes, your portfolio will be live at <code>https://username.github.io</code> (replace "username" with your GitHub username).</p>
+                    <div class="success">
+                        <p><strong>Success!</strong> Your portfolio is now live. It may take a few minutes for the site to be available after your first commit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note">
+            <h3><i class="fas fa-lightbulb"></i> Pro Tip</h3>
+            <p>If you already have an HTML file, you can also upload it directly by clicking "Add file" → "Upload files" and dragging your HTML file to the repository.</p>
+        </div>
+        
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">Q: Why does my file need to be named index.html?</div>
+            <p>A: <code>index.html</code> is the default file that web servers look for when a URL doesn't specify a filename. This makes your portfolio accessible at a clean URL without needing to include the filename.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Q: My site isn't showing up. What should I do?</div>
+            <p>A: First, check that your repository is set to public. Then verify that GitHub Pages is enabled for the main branch. It can take up to 10 minutes for your site to be available after the first deployment.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Q: Can I use a custom domain?</div>
+            <p>A: Yes! In your repository Settings → Pages, you can add a custom domain. You'll also need to configure your DNS settings with your domain registrar.</p>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I update my portfolio later?</div>
+            <p>A: You can edit your <code>index.html</code> file directly on GitHub by clicking on the file and then the pencil icon, or upload a new version of your HTML file.</p>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="#" class="btn">View Example Portfolio</a>
+            <a href="#" class="btn btn-secondary">Go to GitHub</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Need more help? Check out the <a href="https://docs.github.com/en/pages">GitHub Pages documentation</a></p>
+        </div>
+    </footer>
+</body>
+</html>
